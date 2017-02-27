@@ -201,7 +201,7 @@ webpackJsonp([1, 0], [function(t, e, s) {
         },
         created: function() {
             var t = this;
-            this.$http.get.jsonp("http://vuejssellapp.t.imooc.io/api/goods", {}, { headers: {}, emulateJSON: true }).then(function(e) { e = e.body, e.errno === v && (t.goods = e.data, t.$nextTick(function() { t._initScroll(), t._calculateHeight() })) })
+            this.$http.jsonp("http://vuejssellapp.t.imooc.io/api/goods", {}, { headers: {}, emulateJSON: true }).then(function(e) { e = e.body, e.errno === v && (t.goods = e.data, t.$nextTick(function() { t._initScroll(), t._calculateHeight() })) })
         },
         methods: {
             selectMenu: function(t, e) {
