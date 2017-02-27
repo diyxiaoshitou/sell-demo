@@ -114,7 +114,8 @@ webpackJsonp([1, 0], [function(t, e, s) {
         data: function() { return { seller: { id: function() { var t = (0, a.urlParse)(); return t.id }() } } },
         created: function() {
             var t = this;
-            this.$http.get("/api/seller?id=" + this.seller.id).then(function(e) { e = e.body, e.errno === c && (t.seller = (0, n.default)({}, t.seller, e.data)) })
+            t.seller = (0, n.default)({}, t.seller, window.sell_data.seller);
+            // this.$http.get("/api/seller?id=" + this.seller.id).then(function(e) { e = e.body, e.errno === c && (t.seller = (0, n.default)({}, t.seller, e.data)) })
         },
         components: { "v-header": l.default }
     }
@@ -202,7 +203,7 @@ webpackJsonp([1, 0], [function(t, e, s) {
         created: function() {
             var t = this;
             // console.log(window.goods);
-            t.goods = window.goods;
+            t.goods = window.sell_data.goods;
             t.$nextTick(function() { t._initScroll(), t._calculateHeight() });
 
         },
@@ -272,7 +273,10 @@ webpackJsonp([1, 0], [function(t, e, s) {
         data: function() { return { ratings: [], selectType: f, onlyContent: !0 } },
         created: function() {
             var t = this;
-            this.$http.get("/api/ratings").then(function(e) { e = e.body, e.errno === v && (t.ratings = e.data, t.$nextTick(function() { t.scroll = new n.default(t.$els.ratings, { click: !0 }) })) })
+
+            t.ratings = window.sell_data.ratings;
+            t.$nextTick(function() { t.scroll = new n.default(t.$els.ratings, { click: !0 }) })
+                // this.$http.get("/api/ratings").then(function(e) { e = e.body, e.errno === v && (t.ratings = e.data, t.$nextTick(function() { t.scroll = new n.default(t.$els.ratings, { click: !0 }) })) })
         },
         methods: { needShow: function(t, e) { return !(this.onlyContent && !e) && (this.selectType === f || t === this.selectType) } },
         events: {
