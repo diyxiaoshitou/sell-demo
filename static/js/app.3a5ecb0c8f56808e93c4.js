@@ -202,8 +202,9 @@ webpackJsonp([1, 0], [function(t, e, s) {
         created: function() {
             var t = this;
             // console.log(window.goods);
-            t.goods = window.goods, t.$nextTick(function() { t._initScroll(), t._calculateHeight() })
-                // this.$http.jsonp("http://vuejssellapp.t.imooc.io/api/goods").then(function(e) { e = e.body, e.errno === v && (t.goods = e.data, t.$nextTick(function() { t._initScroll(), t._calculateHeight() })) })
+            t.goods = window.goods;
+            t.$nextTick(function() { t._initScroll(), t._calculateHeight() });
+
         },
         methods: {
             selectMenu: function(t, e) {
