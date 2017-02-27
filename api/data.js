@@ -1,4 +1,4 @@
-var goods = [{
+window.goods = [{
         "name": "热销榜",
         "type": -1,
         "foods": [{
